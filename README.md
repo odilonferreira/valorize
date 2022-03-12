@@ -13,6 +13,7 @@
   - It's not allowed the registry for users that isn't administrators
 
 - Compliment register
+
   - It's not allowed an user register one compliment for yourself;
   - It's not allowed register one compliment for invalid users;
   - The user must be authenticated in the application;
