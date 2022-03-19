@@ -11,7 +11,7 @@ import { Tag } from "./Tag";
 import { User } from "./User";
 
 @Entity("compliments")
-class Compliments {
+class Compliment {
   @PrimaryColumn()
   readonly id: string;
 
@@ -49,4 +49,4 @@ class Compliments {
   }
 }
 
-export { Compliments };
+export { Compliment };
