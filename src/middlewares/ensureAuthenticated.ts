@@ -29,7 +29,7 @@ export function ensureAuthenticated(
 
     request.user_id = sub;
 
-    return next;
+    return next();
   } catch (error) {
     return response.status(401).end();
   }

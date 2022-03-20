@@ -20,6 +20,10 @@ router.post(
   createTagController.handle
 );
 router.post("/login", authenticateUserController.handle);
-router.post("/compliments", createComplimentController.handle);
+router.post(
+  "/compliments",
+  ensureAuthenticated,
+  createComplimentController.handle
+);
 
 export { router };
