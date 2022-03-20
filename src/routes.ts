@@ -5,6 +5,7 @@ import { CreateTagController } from "./controllers/CreateTagController";
 import { CreateUserController } from "./controllers/CreateUserController";
 import { ListTagController } from "./controllers/ListTagController";
 import { ListUserReceivedComplimentsController } from "./controllers/ListUserReceivedComplimentsController";
+import { ListUsersController } from "./controllers/ListUsersController";
 import { ListUserSentComplimentsController } from "./controllers/ListUserSentComplimentsController";
 import { ensureAdmin } from "./middlewares/ensureAdmin";
 import { ensureAuthenticated } from "./middlewares/ensureAuthenticated";
@@ -19,6 +20,7 @@ const listUserSentComplimentsController =
 const listUserReceivedComplimentsController =
   new ListUserReceivedComplimentsController();
 const listTagController = new ListTagController();
+const listUsersController = new ListUsersController();
 
 router.post("/users", createUserController.handle); //already passing req and res to handle
 router.post(
@@ -45,5 +47,6 @@ router.get(
   listUserReceivedComplimentsController.handle
 );
 router.get("/tags", ensureAuthenticated, listTagController.handle);
+router.get("/users", ensureAuthenticated, listUsersController.handle);
 
 export { router };

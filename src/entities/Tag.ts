@@ -1,3 +1,4 @@
+import { Expose } from "class-transformer";
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuid } from "uuid";
 
@@ -14,6 +15,12 @@ class Tag {
 
   @CreateDateColumn()
   updated_at: Date;
+
+  @Expose({ name: "name_custom" })
+  nameCustom(): string {
+    const editedName = this.name.toLowerCase();
+    return `#${editedName}`;
+  }
 
   constructor() {
     if (!this.id) {
